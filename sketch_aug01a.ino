@@ -32,7 +32,7 @@ const int relay = 7;
 
 Servo servo1;
 Servo servo2;
-Servo servo3;
+
 int pos = 0;
  
 void setup()
@@ -42,7 +42,7 @@ void setup()
     pinMode(relay, OUTPUT);
     servo1.attach(2);
     servo2.attach(3);
-    servo3.attach(4);
+    
 
     servo2.write(180);
     digitalWrite(relay, LOW);
@@ -69,10 +69,10 @@ void loop()
  
 
     buttonState = analogRead(button);
-    //Serial.println(buttonState);
+    Serial.println(buttonState);
     if(buttonState == LOW){
       receivedSteps = 18000; //value for the steps
-      receivedSpeed = 1700; //value for the speed     
+      receivedSpeed = 2000; //value for the speed     
       directionMultiplier = 1; //We define the direction
       Serial.println("Absolute position (+)."); //print the action
       RotateAbsolute(); //Run the function
